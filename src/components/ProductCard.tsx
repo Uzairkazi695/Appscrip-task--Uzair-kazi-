@@ -4,7 +4,8 @@ export default function ProductCard({product}: {product: any}) {
   const { id } = product;
 
   return (
-    <div className={styles.productCard}>
+    <div className={styles.productGrid}>
+      <div className={styles.productCard}>
       <Link href={`/products/${id}`}>
         <div className={styles.imageContainer}>
           <img src={product.image} className={styles.productImage} alt={product.title} />
@@ -13,6 +14,7 @@ export default function ProductCard({product}: {product: any}) {
           <div className={styles.productTitle}>{product.title}</div>
         </div>
       </Link>
+    </div>
     </div>
   );
 }

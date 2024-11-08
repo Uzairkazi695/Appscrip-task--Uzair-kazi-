@@ -6,8 +6,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: auto;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   transition: transform 0.3s ease;
@@ -18,17 +18,20 @@
 }
 
 .imageContainer {
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-  max-height: 30rem;
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Creates a 1:1 aspect ratio */
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .productImage {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   border-radius: 6px;
   transition: transform 0.3s ease;
 }
@@ -38,49 +41,58 @@
 }
 
 .productDetails {
-  margin-top: 1rem;
+  width: 100%;
   text-align: center;
 }
 
 .productTitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.875rem, 2vw, 1.125rem); /* Responsive font size */
   color: #333;
   font-weight: 600;
-  text-decoration: none !important; /* Prevent underline */
-  white-space: nowrap;
+  text-decoration: none !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Show max 2 lines */
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
+  word-break: break-word;
+  line-height: 1.2;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+/* Small mobile devices */
+@media (max-width: 480px) {
   .productCard {
-    margin: 0.5rem;
-    padding: 0.75rem;
-  }
-
-  .productImage {
-    max-height: 30rem;
-    max-width: 20rem;
-  }
-
-  .productTitle {
-    font-size: 1rem;
+    margin: 0.25rem;
+    padding: 0.5rem;
   }
 }
 
-@media (min-width: 1024px) {
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .productCard {
+    max-width: calc(50% - 1rem);
+    margin: 0.5rem;
+  }
+}
+
+/* Small laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .productCard {
+    max-width: calc(33.333% - 1rem);
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
   .productCard {
     max-width: 280px;
   }
+}
 
-  .productImage {
-    max-height: 20rem;
-  }
-
-  .productTitle {
-    font-size: 1.125rem;
-    max-width: 240px;
-  }
+/* For grid layout container (add this to parent element) */
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
 }

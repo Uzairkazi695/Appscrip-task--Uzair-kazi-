@@ -152,7 +152,7 @@
       margin-top: 1rem;
     }
     .topBanner span:nth-child(n+2) {
-        display: none; /* Hide all spans except the first one */
+        display: none;
     }
   }
   
