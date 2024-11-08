@@ -31,7 +31,7 @@ export default function ProductContainer() {
   const filterCategories = [
     {
       name: "CATEGORY",
-      options: ["Electronics", "Men's Clothing", "Women's Clothing"],
+      options: ["Electronics", "Men's Clothing", "Women's Clothing", "Jewelery"],
     },
     {
       name: "PRICE RANGE",
@@ -50,8 +50,6 @@ export default function ProductContainer() {
 
   useEffect(() => {
     let filtered = [...products];
-
-    // Apply filters
     Object.entries(selectedFilters).forEach(([category, values]) => {
       if (values.length > 0) {
         if (category === "PRICE RANGE") {

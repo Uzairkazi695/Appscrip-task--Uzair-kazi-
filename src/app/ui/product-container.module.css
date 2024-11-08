@@ -256,7 +256,6 @@
   background: #f5f5f5;
 }
 
-/* New styles for the recommended section */
 .recommendedSection {
   background-color: #f9f9f9;
   padding: 20px;
@@ -316,7 +315,6 @@
     display: block;
   }
 
-  /* Modified header styles for mobile */
   .header {
     flex-direction: row;
     align-items: center;
@@ -332,7 +330,7 @@
     width: auto;
   }
 
-  /* Move the recommended section above the filter sidebar on mobile */
+ 
   .recommendedSection {
     order: -1;
   }
