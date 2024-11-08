@@ -5,6 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { FaChevronDown } from "react-icons/fa";
 import Image from "next/image";
 import { IoMdClose } from "react-icons/io";
+import Link from "next/link";
 
 interface Product {
   id: number;
@@ -17,7 +18,7 @@ interface Product {
 
 export default function ProductContainer() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [isFilterVisible, setIsFilterVisible] = useState(true);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
   const [selectedSort, setSelectedSort] = useState("RECOMMENDED");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [selectedFilters, setSelectedFilters] = useState<
@@ -211,20 +212,24 @@ export default function ProductContainer() {
 
         <div className={styles.productsGrid}>
           {filteredProducts.map((product) => (
-            <div key={product.id} className={styles.productCard}>
-              <button className={styles.favoriteButton}>
-                <CiHeart size={20} />
-              </button>
-              <Image
-                src={product.image}
-                alt={product.title}
-                width={300}
-                height={300}
-                className={styles.productImage}
-              />
-              <h3 className={styles.productName}>{product.title}</h3>
-              <p className={styles.productPrice}>${product.price.toFixed(2)}</p>
-            </div>
+            <Link href={`/products/${product.id}`} key={product.id}>
+              <div className={styles.productCard}>
+                <button className={styles.favoriteButton}>
+                  <CiHeart size={20} />
+                </button>
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  width={300}
+                  height={300}
+                  className={styles.productImage}
+                />
+                <h3 className={styles.productName}>{product.title}</h3>
+                <p className={styles.productPrice}>
+                  ${product.price.toFixed(2)}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
