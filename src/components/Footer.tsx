@@ -68,24 +68,12 @@ export default function Footer() {
               </span>
             </h3>
             <ul className={openSection === "brand" ? styles.open : ""}>
-              <li>
-                <Link href="/about">About Us</Link>
-              </li>
-              <li>
-                <Link href="/stories">Stories</Link>
-              </li>
-              <li>
-                <Link href="/artisans">Artisans</Link>
-              </li>
-              <li>
-                <Link href="/boutiques">Boutiques</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact Us</Link>
-              </li>
-              <li>
-                <Link href="/eu-compliance">EU Compliances Docs</Link>
-              </li>
+              <li>About Us</li>
+              <li>Stories</li>
+              <li>Artisans</li>
+              <li>Boutiques</li>
+              <li>Contact Us</li>
+              <li>EU Compliances Docs</li>
             </ul>
           </div>
 
@@ -100,27 +88,13 @@ export default function Footer() {
               </span>
             </h3>
             <ul className={openSection === "quickLinks" ? styles.open : ""}>
-              <li>
-                <Link href="/orders">Orders & Shipping</Link>
-              </li>
-              <li>
-                <Link href="/join">Join/Login as a Seller</Link>
-              </li>
-              <li>
-                <Link href="/payment">Payment & Pricing</Link>
-              </li>
-              <li>
-                <Link href="/returns">Return & Refunds</Link>
-              </li>
-              <li>
-                <Link href="/faqs">FAQs</Link>
-              </li>
-              <li>
-                <Link href="/privacy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link href="/terms">Terms & Conditions</Link>
-              </li>
+              <li>Orders & Shipping</li>
+              <li>Join/Login as a Seller</li>
+              <li>Payment & Pricing</li>
+              <li>Return & Refunds</li>
+              <li>FAQs</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
             </ul>
           </div>
 
