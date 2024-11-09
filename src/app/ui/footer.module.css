@@ -132,6 +132,12 @@
   .mobileAccordionTogglePlus {
     display: none;
   }
+
+  @media (max-width: 400px) {
+    .subscribeForm {
+      flex-direction: column;
+    }
+  }
   
   @media (max-width: 768px) {
     .topSection {
