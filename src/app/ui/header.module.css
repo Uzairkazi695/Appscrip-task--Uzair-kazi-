@@ -21,6 +21,7 @@
   align-items: center;
   padding: 1rem 2rem;
   position: relative;
+  border-bottom: 2px solid #E5E5E5
 }
 
 .logoContainer {
@@ -32,7 +33,7 @@
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -65,12 +66,14 @@
   display: flex;
   gap: 2rem;
   margin-bottom: 1rem;
+  padding-top: 2rem;
 }
 
 .menuItems a {
   color: black;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 20px;
   transition: opacity 0.2s;
 }
 

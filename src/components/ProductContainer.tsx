@@ -31,7 +31,12 @@ export default function ProductContainer() {
   const filterCategories = [
     {
       name: "CATEGORY",
-      options: ["Electronics", "Men's Clothing", "Women's Clothing", "Jewelery"],
+      options: [
+        "Electronics",
+        "Men's Clothing",
+        "Women's Clothing",
+        "Jewelery",
+      ],
     },
     {
       name: "PRICE RANGE",
@@ -210,7 +215,11 @@ export default function ProductContainer() {
 
         <div className={styles.productsGrid}>
           {filteredProducts.map((product) => (
-            <Link href={`/products/${product.id}`} key={product.id}>
+            <Link
+              href={`/products/${product.id}`}
+              key={product.id}
+              style={{ textDecoration: "none" }}
+            >
               <div className={styles.productCard}>
                 <button className={styles.favoriteButton}>
                   <CiHeart size={20} />
